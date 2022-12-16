@@ -19,7 +19,7 @@ const registerClientCtrl = expressAsyncHandler(async (req, res) => {
         client: true,
         password: req?.body?.password,
       });
-      res.json({data:newuser,success:true});
+      res.json({data:newuser,success:true,message:"Registration successful"});
     } catch (error) {
       console.log(error);
       res.json(error.message);
