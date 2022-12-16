@@ -6,7 +6,7 @@ const dbConnect = require("./config/db/dbConnection");
 const { notFound, errorHandler } = require("./middlewares/errorHandler");
 const userRoutes = require("./route/users/UserRoutes");
 const clientRoutes = require("./route/users/clientRoutes");
-const projectRoutes = require("./route/project/ProjectRoutes");
+const projectRoutes = require("./route/project/projectRoutes");
 const applicationRoutes = require("./route/applications/applicationRouter");
 
 const app = express();
