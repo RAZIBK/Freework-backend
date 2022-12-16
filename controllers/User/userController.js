@@ -30,12 +30,12 @@ const registerUserCtrl = expressAsyncHandler(async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) {
       res.status(401);
-      throw new Error("Your username or password is incorrect");
+      throw new Error("Your Email or password is incorrect");
     }
     const isMatch = await bcrypt.compare(password, user.password);  
     if (!isMatch) {
       res.status(401);
-      throw new Error("Your username or password is incorrect");
+      throw new Error("Your Email or password is incorrect");
     } else {
       let token = generateToken(user?._id);
       res.json({ message: "Login successful", success: true, token: token,data:user });
