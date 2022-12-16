@@ -3,14 +3,14 @@ const { createProjectCtrl, allProjectCtrl, singleProjectCtrl  } = require("../..
 
 
 const authmidlewarres = require("../../middlewares/auth");
-const projectRoutes = express.Router();
+const ProjectRoutes = express.Router();
 
-projectRoutes.get("/get-project",authmidlewarres, singleProjectCtrl);
-projectRoutes.post("/",authmidlewarres, createProjectCtrl);
-projectRoutes.get("/", allProjectCtrl);
-
-
+ProjectRoutes.get("/get-project",authmidlewarres, singleProjectCtrl);
+ProjectRoutes.post("/",authmidlewarres, createProjectCtrl);
+ProjectRoutes.get("/", allProjectCtrl);
 
 
 
-module.exports = projectRoutes;
+
+
+module.exports = ProjectRoutes;
