@@ -28,7 +28,10 @@ const registerUserCtrl = expressAsyncHandler(async (req, res) => {
   const loginUserCtrl = expressAsyncHandler(async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
-    console.log(user);
+    if (!user) {
+      res.status(401);
+      throw new Error("Your username or password is incorrect");
+    }
     const isMatch = await bcrypt.compare(password, user.password);  
     if (!isMatch) {
       res.status(401);
